@@ -1,5 +1,5 @@
 {
-    "name": "macellan/laravel-excel",
+    "name": "divtag-nl/laravel-8-excel",
     "description": "Supercharged Excel exports in Laravel",
     "license": "MIT",
     "keywords": [
@@ -19,11 +19,15 @@
         {
             "name": "Fatih Aytekin",
             "email": "fatih@aytekin.me"
+        },
+        {
+            "name": "Divtag",
+            "email": "info@divtag.nl"
         }
     ],
     "require": {
         "php": ">=5.5",
-        "divtag-nl/phpexcel": "^1.8.14",
+        "divtag-nl/phpexcel": "^1.8.5",
         "illuminate/cache": "~5.0 || ~6.0 || ~7.0 || ~8.0",
         "illuminate/config": "~5.0 || ~6.0 || ~7.0 || ~8.0",
         "illuminate/filesystem": "~5.0 || ~6.0 || ~7.0 || ~8.0",

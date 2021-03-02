@@ -1,14 +1,15 @@
 <?php namespace Macellan\Excel\Writers;
 
 use Carbon\Carbon;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Str;
 use Macellan\Excel\Classes\FormatIdentifier;
+use Macellan\Excel\Classes\LaravelExcelWorksheet;
+use Macellan\Excel\Exceptions\LaravelExcelException;
 use Macellan\Excel\Parsers\ViewParser;
 use PHPExcel;
 use PHPExcel_IOFactory;
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Facades\Response;
-use Macellan\Excel\Classes\LaravelExcelWorksheet;
-use Macellan\Excel\Exceptions\LaravelExcelException;
 
 /**
  *
@@ -679,7 +680,7 @@ class LaravelExcelWriter {
     public function __call($method, $params)
     {
         // If the dynamic call starts with "set"
-        if (starts_with($method, 'set') && $this->excel->isChangeableProperty($method))
+        if (Str::startsWith($method, 'set') && $this->excel->isChangeableProperty($method))
         {
             $this->_setAttribute($method, $params);
 
